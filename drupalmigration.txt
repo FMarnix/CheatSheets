@@ -1,0 +1,11 @@
+#Migrate a website from one machine to another
+1. Copy the files from the site(the all drupal directory)
+2. Dump the database file
+- run mysqldump --database --skip-add-drop-table -u root -p <!databasename!> < <!databasename.sql!>
+3. Create a database in the new machine and import the .sql file, it's better to import the file from the command line and if using phpmyadmin it's could be necessary to rearrange the settings in php.ini and my.ini like max_loaded_size etc.
+4. Make an instalation on the machine of the drupal site from the directory folder copied
+- this will make a like common drupal install when need to connect to a new database create a new database this will create a database with the basic data of a normal drupl itee
+3. Drop all the tables of the created  database in the new machine and import the .sql file, it's better to import the file from the command line and if using phpmyadmin it's could be necessary to rearrange the settings in php.ini and my.ini like max_loaded_size etc.
+4. If got trouble in making the login in the new site, run drush uli, this will generate a token to be used as login
+5. Drush cr and the site must be ok to be used.
+

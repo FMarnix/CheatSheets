@@ -1,0 +1,2 @@
+#SQLdump avoiding drop table 
+mysqldump --databases --skip-add-drop-table -u root -p virgilio > virgilio.sql
